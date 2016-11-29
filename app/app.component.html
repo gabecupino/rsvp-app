@@ -1,0 +1,19 @@
+<h3>Enter your confirmation code.</h3>
+<input #unsubmittedCode placeholder="Confirmation code"/>
+<button class="submit" (click)="submit(unsubmittedCode.value)">Submit</button>
+<h1>Guests</h1>
+<div> 
+    <ul *ngIf="map[currentCode] !== undefined" class="guests">
+        <li *ngFor="let guestName of map[currentCode].confirmedNames">
+            <input type="checkbox"> {{guestName}}<br>
+        </li>
+    </ul>
+</div>
+<div>
+    <ul *ngIf="map[currentCode] !== undefined" class="plus-ones">
+        <li *ngFor="let person of currentPlusOnes">
+            <input type="checkbox"><input #name placeholder="Guest name">
+        </li>
+    </ul>
+</div>
+
